@@ -1,0 +1,61 @@
+/* -------- Reset -------- */
+body, body * {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    background: #45BADD;
+}
+
+/* -------- Container & Content -------- */
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url(assets/robot.gif) no-repeat center center;
+    background-size: cover;
+}
+
+.joke-btn {
+    width: 200px;
+    height: 45px;
+    background: #FF3482;
+    border: none;
+    border-radius: 7px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    font-weight: bolder;
+    color: #000;
+    box-shadow: 2px 3px 5px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.joke-btn:hover {
+    filter: brightness(85%);
+}
+
+.joke-btn:active {
+    transform: scale(0.9);
+}
+
+.joke-btn:disabled {
+    filter: brightness(30%);
+}
+
+/* -------- Display Adjustment -------- */
+@media screen and (min-width: 950px) {
+    .container {
+        background-size: contain;
+        background-position: left center;
+    }
+
+    .joke-btn {
+        box-shadow: 2px 3px 10px 10px rgba(0, 0, 0, 0.2);
+    }
+}
