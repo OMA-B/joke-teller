@@ -1,6 +1,7 @@
 // grabbing elements
 const tellJoke = document.querySelector('.tell-joke');
 const jokeBtn = document.querySelector('.joke-btn');
+const showJoke = document.querySelector('.show-joke');
 
 // converting text to speech
 const tellAJoke = (joke) => {
@@ -14,6 +15,10 @@ const tellAJoke = (joke) => {
         f: '44khz_16bit_stereo',
         ssml: false
     });
+    
+    // show joke text as robot tells joke
+    showJoke.style.display = 'block';
+    showJoke.textContent = joke;
 }
 
 // fetching joke text from remote API
@@ -34,6 +39,7 @@ const getJoke = async () => {
             joke = data.joke;
         }
         tellAJoke(joke);
+        // jokeText(joke);
     } catch (error) {
         // catch error here
         console.log('whoops', error);
@@ -42,4 +48,7 @@ const getJoke = async () => {
 
 jokeBtn.addEventListener('click', getJoke);
 // to make the 'Tell A Joke' button clickable again when the audio has finished playing
-tellJoke.addEventListener('ended', () => jokeBtn.disabled = false);
+tellJoke.addEventListener('ended', () => {
+    jokeBtn.disabled = false
+    showJoke.style.display = 'none';
+});

@@ -22,17 +22,20 @@ body {
     background-size: cover;
 }
 
-.joke-btn {
-    width: 200px;
-    height: 45px;
+.joke-btn, .show-joke {
     background: #FF3482;
-    border: none;
     border-radius: 7px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 15px;
     font-weight: bolder;
     color: #000;
     box-shadow: 2px 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.joke-btn {
+    width: 200px;
+    height: 45px;
+    border: none;
     cursor: pointer;
 }
 
@@ -46,6 +49,16 @@ body {
 
 .joke-btn:disabled {
     filter: brightness(30%);
+}
+
+/* -------- Display joke as text -------- */
+.show-joke{
+    width: 250px;
+    padding: 7px;
+    position: relative;
+    top: -10px;
+    text-align: center;
+    display: none;
 }
 
 /* -------- Display Adjustment -------- */
